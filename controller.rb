@@ -6,7 +6,19 @@ class Controller
       @repo = repo
       @view = View.new
     end
+
+
+
+    def save_post
     end
+
+  def read_post
+  end 
+
+ def check_off 
+ end
+
+end
   
   
   
