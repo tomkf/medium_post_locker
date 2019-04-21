@@ -7,18 +7,20 @@ puts "#{index += 1} #{check_box} - #{item.post_title} (#{item.post_author})"
 end
 end
 
-
 def get_pathway
 puts "Enter the extention of the url: (e.g, everything after the .com)"
 user_input = gets.chomp
 return user_input
 end
 
-
-def check_off(info_from_repo)
-puts "Index?"
+def select
+puts "Select the articles index"
 user_input = gets.chomp.to_i
 return user_input -= 1
+end
+
+def read_post(instance)
+puts instance.content
 end
 
 def display_check_mark?(instance)

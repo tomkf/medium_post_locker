@@ -37,12 +37,16 @@ end
   end
 
   def read_post
+   list_posts
+   user_input = @view.select
+   desired_instance = @repo.list_all
+   @view.read_post(desired_instance[user_input])
     # gives command to take post from repo, display it in the view
   end
 
   def check_off
     send_to_view = @repo.list_all
-    user_submit = @view.check_off(send_to_view)
+    user_submit = @view.select
     desired_instance = send_to_view[user_submit]
     desired_instance.mark_as_read
     list_posts
