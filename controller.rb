@@ -27,7 +27,7 @@ class Controller
     author = doc.search(".postMetaHeader a.ds-link").first&.text
     post_obj = {:url => url_path, :title => title, :post_author => author, :content => content}
     post_instance = Post.new(post_obj)
-    # will command repo to store this instance in CSV and locally...
+    @repo.add_post(post_instance)
     #updates view
   end
 
@@ -52,14 +52,6 @@ end
 
 
 
-
-html_file = open(url).read
-html_doc = Nokogiri::HTML(html_file)
-
-html_doc.search('.m_titre_resultat a').each do |element|
-  puts element.text.strip
-  puts element.attribute('href').value
-end
 
 
 
