@@ -27,8 +27,6 @@ class Controller
     author = doc.search(".postMetaHeader a.ds-link").first&.text
     post_obj = {:url => url_path, :title => title, :post_author => author, :content => content}
     post_instance = Post.new(post_obj)
-
-
     # will command repo to store this instance in CSV and locally...
     # gives command to update view
   end
