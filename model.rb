@@ -20,7 +20,7 @@ class Post
   attr_reader :post_author, :post_title, :url_pathway, :content
 
   def initialize(url_pathway, post_title, post_author, content)
-    @url_pathway = url_pathway
+    @url_pathway = "https://medium.com/" + url_pathway
     @post_title = post_title
     @post_author = post_author
     @content = content

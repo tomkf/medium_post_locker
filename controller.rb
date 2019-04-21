@@ -5,6 +5,7 @@ class Controller
     def initialize(repo)
       @repo = repo
       @view = View.new
+      
     end
 
 

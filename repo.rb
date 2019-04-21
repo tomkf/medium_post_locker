@@ -7,8 +7,8 @@ require_relative 'posts.csv'
 
 class Repository
   attr_writer :repo_array
-  def initialize(repo_array = [], csv_filepath = nil)
-    @repo_array = repo_array
+  def initialize(csv_filepath = nil)
+    @repo_array = []
     @csv_filepath = csv_filepath
   end
 end
