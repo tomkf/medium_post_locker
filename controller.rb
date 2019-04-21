@@ -6,7 +6,7 @@ require 'nokogiri'
 
 
 class Controller
-  # is initialized with a repository argument,  creates a view
+  # is initialized with a repository argument, creates a view
   attr_accessor :view, :repo
 
   def initialize(repo)
@@ -20,7 +20,6 @@ def list_posts
 send_to_view = @repo.list_all
 @view.display_posts(send_to_view)
 end
-
 
   def save_post
     path = @view.get_pathway 
@@ -42,20 +41,13 @@ end
   end
 
   def check_off
-    # gives command to view to update the corresponding check-box
+    send_to_view = @repo.list_all
+    user_submit = @view.check_off(send_to_view)
+    desired_instance = send_to_view[user_submit]
+    desired_instance.mark_as_read
+    list_posts
   end
 end
-
-# any action dealing w/ data delegated to repo.
-# any puts/get handled by view
-# any need, follow the flow and code it right away
-# test regularly
-# For each user story, you need to code an action (an instance method) in the controller.
-
-# think of the controller as being passed the repo, it will create a view that it contains
-# it can create models....the post class
-
-
 
 
 
