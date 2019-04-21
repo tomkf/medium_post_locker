@@ -1,13 +1,15 @@
-require_relative 'posts.rb'
-require_relative 'posts.csv'
+require_relative 'model'
 require 'csv'
 
 
 class Repository
   attr_writer :repo_array
-  def initialize(csv_filepath = nil)
+  def initialize(csv_filepath)
     @repo_array = []
-    @csv_filepath = csv_filepath
+     @csv_filepath = csv_filepath
+    # CSV.foreach(@csv_file_path) do |row|  
+    #   @repo_array.push(Recipe.new(row[0], row[1], row[2], row[3], row[4]))
+    # end
   end
 
 
@@ -16,4 +18,6 @@ class Repository
 CSV.open(filepath, 'a') do |csv|
   csv << [post_instance.url_pathway, post_instance.post_title, post_instance.post_author, post_instance.content, post_instance.check_mark]
   end
+end
+
 end

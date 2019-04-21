@@ -3,7 +3,6 @@ require_relative 'view'
 require_relative 'model'
 require 'open-uri'
 require 'nokogiri'
-require ‘pry’
 
 
 class Controller
@@ -18,7 +17,8 @@ class Controller
   # following commands issued from router....
 
   def save_post
-  url_path = "https://medium.com/" += @view.get_pathway 
+    path = @view.get_pathway 
+  url_path = "https://medium.com/" + path 
   file = open(url_path).read
     doc = Nokogiri::HTML(file)
     title = doc.search("h1").first.text
