@@ -8,8 +8,6 @@ end
 end
 
 
-
-
 def get_pathway
 puts "Enter the extention of the url: (e.g, everything after the .com)"
 user_input = gets.chomp
@@ -20,7 +18,7 @@ end
 def check_off(info_from_repo)
 puts "Index?"
 user_input = gets.chomp.to_i
-submit = info_from_repo[user_input -= 1]
+return user_input -= 1
 end
 
 def display_check_mark?(instance)
@@ -32,17 +30,3 @@ return check_box
 end
 
 end
-
-
-
-
-
-# 1. [x] - What’s your goal for learning to code? (Boris Paillard)
-# 2. [ ] - Teaching Programming is Hard (Boris Paillard)
-# 3. [ ] - This is what a developer looks like (Rebecca Menat)
-# Index?
-# > 2
-
-# 1. [x] - What’s your goal for learning to code? (Boris Paillard)
-# 2. [x] - Teaching Programming is Hard (Boris Paillard)
-# 3. [ ] - This is what a developer looks like (Rebecca Menat)
