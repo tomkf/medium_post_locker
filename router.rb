@@ -36,10 +36,12 @@ end
   def user_option(user_input)
     case user_input
     when 1
-      @controller.save_post
+     @controller.list_posts
     when 2
-      @controller.read_post
+      @controller.save_post
     when 3
+      @controller.read_post
+    when 4
       @controller.check_off
       end
   end

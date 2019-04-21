@@ -5,13 +5,16 @@ require 'csv'
 class Repository
   attr_writer :repo_array
   def initialize(csv_filepath)
-    @repo_array = []
+    @repo_array = []  #<==== write from the CSV file an array of instances....
      @csv_filepath = csv_filepath
     # CSV.foreach(@csv_file_path) do |row|  
     #   @repo_array.push(Recipe.new(row[0], row[1], row[2], row[3], row[4]))
     # end
   end
 
+  def list_all 
+return @repo_array
+  end
 
   def add_post(post_instance)
     @repo_array.push(post_instance)

@@ -16,6 +16,12 @@ class Controller
 
   # following commands issued from router....
 
+def list_posts 
+send_to_view = @repo.list_all
+@view.display_posts(send_to_view)
+end
+
+
   def save_post
     path = @view.get_pathway 
   url_path = "https://medium.com/" + path 
