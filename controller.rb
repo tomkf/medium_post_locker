@@ -6,7 +6,6 @@ require 'nokogiri'
 
 
 class Controller
-  # is initialized with a repository argument, creates a view
   attr_accessor :view, :repo
 
   def initialize(repo)
@@ -14,11 +13,10 @@ class Controller
     @view = View.new
   end
 
-  # following commands issued from router....
 
 def list_posts 
 send_to_view = @repo.list_all
-@view.display_posts(send_to_view)
+@view.list_all(send_to_view)
 end
 
   def save_post
@@ -33,7 +31,6 @@ end
     post_obj = {:url => url_path, :title => title, :post_author => author, :content => content}
     post_instance = Post.new(post_obj)
     @repo.add_post(post_instance)
-    #updates view
   end
 
   def read_post
@@ -41,7 +38,6 @@ end
    user_input = @view.select
    desired_instance = @repo.list_all
    @view.read_post(desired_instance[user_input])
-    # gives command to take post from repo, display it in the view
   end
 
   def check_off

@@ -1,20 +1,18 @@
 require_relative 'controller'
 
-
-
 class Router
   # is init. with the controller (the controller contains the view)
   def initialize(controller)
-  @controller = controller
-  @running = true
+    @controller = controller
+    @running = true
     end
 
-def run # this command runs the app
-  puts '------------------------------------'
-  puts 'Welcome to your Medium pocket reader'
-  puts '------------------------------------'
-  list_options while @running
-end
+  def run # this command runs the app
+    puts '------------------------------------'
+    puts 'Welcome to your Medium pocket reader'
+    puts '------------------------------------'
+    list_options while @running
+  end
 
   def list_options
     puts '----------------------------'
@@ -36,7 +34,7 @@ end
   def user_option(user_input)
     case user_input
     when 1
-     @controller.list_posts
+      @controller.list_posts
     when 2
       @controller.save_post
     when 3
