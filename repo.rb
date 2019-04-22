@@ -6,7 +6,9 @@ class Repository
   def initialize(csv_filepath)
     @repo_array = []
     @csv_filepath = csv_filepath
-    load_csv
+    CSV.foreach(@csv_file_path) do |row|
+      @repo_array.push(Post.new(row[0], row[1], row[2], row[3], row[4]))
+      end
   end
 
   def list_all
@@ -20,9 +22,4 @@ class Repository
     end
 end
 
-def load_csv 
-  CSV.foreach(@csv_file_path) do |row|
-    @repo_array.push(Post.new(row[0], row[1], row[2], row[3], row[4]))
-    end
-  end
 end
